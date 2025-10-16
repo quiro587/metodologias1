@@ -1,0 +1,24 @@
+# 1. Nombre del flujo de trabajo (opcional, pero recomendado)
+name: Mi Primer Flujo de Trabajo
+
+# 2. Evento que activará el flujo de trabajo
+on:
+  # Se activará cada vez que hagas "push" (subas cambios) al repositorio
+  push:
+
+# 3. Trabajos (Jobs) que se ejecutarán
+jobs:
+  # Definimos un único trabajo llamado "saludar"
+  saludar:
+    # 4. Máquina virtual donde se ejecutará el trabajo
+    # "ubuntu-latest" es una máquina con Linux, es la más común y recomendada para empezar
+    runs-on: ubuntu-latest
+
+    # 5. Pasos (Steps) que se ejecutarán en el trabajo "saludar"
+    steps:
+      # Un paso simple que ejecuta un comando en la terminal
+      - name: Imprimir un saludo en la consola
+        run: echo "¡Hola, mundo desde GitHub Actions!"
+
+      - name: Imprimir otro mensaje
+        run: echo "¡Mi automatización está funcionando!"
